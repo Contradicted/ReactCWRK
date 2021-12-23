@@ -1,11 +1,14 @@
-let mongoose = require('mongoose');
-const covidSchema = new mongoose.Schema({
-    state: {
+let mongoose = require('mongoose')
+const BookScheme = new mongoose.Schema({
+    booktitle: {
         type: String,
         required: true
     },
-    cases: Number,
-    death: Number,
-    date: Date,
+    PubYear: Number,
+    author: String,
+    Topic: String,
+    formate: String
+
 })
-module.exports = mongoose.model('covidsystem', covidSchema, 'Data');
+
+module.exports = mongoose.model('bookmodel', BookScheme, 'BookCollection2') 
