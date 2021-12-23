@@ -12,7 +12,7 @@ db.on('error', function (err) {
 })
 
 db.once('connected', function () {
-    console.log('connection is successful to' + MONG_URL);
+    console.log('connection is successful to ' + MONG_URL);
 })
 
 module.exports = db;
