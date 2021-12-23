@@ -73,6 +73,7 @@ app.post('/updatebook/:id', function (req, res) {
             Topic: updatedbook.Topic,
             deaths: updatedbook.deaths,
             cases: updatedbook.cases,
+            date: updatedbook.date,
             formate: updatedbook.formate
         }
         ,

@@ -13,6 +13,7 @@ const ShowBooks = (props) => {
                         <td>{book.formate}</td>
                         <td>{book.deaths}</td>
                         <td>{book.cases}</td>
+                        <td>{book.date}</td>
                         <td>
                             <Link to={"/edit/" + book._id}>Edit</Link>
                         </td>
@@ -42,6 +43,7 @@ export default function DisplayData(props) {
                         <th>Formate</th>
                         <th>Deaths</th>
                         <th>Cases</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody>

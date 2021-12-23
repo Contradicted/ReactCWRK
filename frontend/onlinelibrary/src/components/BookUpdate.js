@@ -8,6 +8,7 @@ function Book_UpDateForm(props) {
         formate: "",
         deaths: 0,
         cases: 0,
+        date: { year: 0, month: 0, day: 0 },
         PubYear: 1990
     });
 
@@ -48,6 +49,7 @@ function Book_UpDateForm(props) {
 
             deaths: state.deaths,
             cases: state.cases,
+            date: state.date,
             formate: state.formate
 
         }
@@ -70,11 +72,10 @@ function Book_UpDateForm(props) {
                 </div>
 
                 <div className="form-group">
-                    <label>Date: </label>
-                    <input className="form-control" name="author"
-                        value={state.author}
-                        onChange={handleChange}
-                    />
+                    <label for="date">Date: </label>
+                    <input className="form-control"
+                        type="date" name="date" value={state.date}
+                        onChange={handleChange} />
                 </div>
 
                 <div className="form-group">
