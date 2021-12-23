@@ -11,11 +11,11 @@ export default class App extends Component {
     return (
       <Router>
         <div className="container">
-          <center><h2> On-Line Book Library using React </h2></center>
+          <center><h2> COVID-19 VACCINATION SYSTEM </h2></center>
           <br />
           <nav className="navbar navbar-expand-lg navbar-light bg-success">
-            <Link to="/" className="navbar-brand"><h4>Add a Book</h4></Link>
-            <Link to="/DisplayBooksF1" className="navbar-brand"><h4>Display All Books</h4></Link>
+            <Link to="/" className="navbar-brand"><h4>Add Data</h4></Link>
+            <Link to="/DisplayBooksF1" className="navbar-brand"><h4>Display All Data</h4></Link>
           </nav>
           <br />
           <Route path="/" exact component={Book_Form} />

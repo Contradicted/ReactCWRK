@@ -35,24 +35,24 @@ export default function Book_Form() {
 
     return (
         <div style={{ marginTop: 10 }}>
-            <h3>Add Book</h3>
+            <h3>Add Data</h3>
             <form onSubmit={OnSubmit} method="Post">
                 <div className="form-group">
-                    <label>Book Title: </label>
+                    <label>State: </label>
                     <input className="form-control"
                         type="text" name="booktitle"
                         value={state.booktitle}
                         onChange={handleChange} />
                 </div>
                 <div className="form-group">
-                    <label>Book Authors: </label>
+                    <label>Date: </label>
                     <input className="form-control"
                         name="author" value={state.author}
                         onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label>
-                        Pick Book topic: {" "}
+                        Number of Deaths: {" "}
                         <select className="form-control"
                             name="Topic" value={state.Topic}
                             onChange={handleChange}>
@@ -65,7 +65,7 @@ export default function Book_Form() {
                     </label>
                 </div>
                 <div className="form-group">
-                    <label>Formate: </label>
+                    <label>Number of Cases: </label>
                     <div className="form-check form-check-inline">
                         <input className="form-check-label"
                             type="radio" name="formate" value="Hard Copy"
@@ -81,7 +81,7 @@ export default function Book_Form() {
                         <label className="form-check-label">Electronic Copy</label>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <label>
                         Publication Year (between 1980 and 2020):
                         <input
@@ -89,11 +89,11 @@ export default function Book_Form() {
                             min="1980" max="2020" value={state.PubYear}
                             onChange={handleChange} />
                     </label>
-                </div>
+                </div> */}
 
                 <div className="form-group">
                     <center>
-                        <input type="submit" value="Add this book"
+                        <input type="submit" value="Add Data"
                             className="btn btn-primary" />
                     </center>
                 </div>
