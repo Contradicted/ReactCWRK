@@ -6,7 +6,8 @@ function Book_UpDateForm(props) {
         booktitle: "",
         author: "",
         formate: "",
-        Topic: "",
+        deaths: 0,
+        cases: 0,
         PubYear: 1990
     });
 
@@ -45,7 +46,8 @@ function Book_UpDateForm(props) {
             PubYear: state.PubYear,
             author: state.author,
 
-            Topic: state.Topic,
+            deaths: state.deaths,
+            cases: state.cases,
             formate: state.formate
 
         }
@@ -57,10 +59,10 @@ function Book_UpDateForm(props) {
     }
     return (
         <div style={{ marginTop: 10 }}>
-            <h3> Update Book Id: {state.booktitle}</h3>
+            <h3> Update Data Id: {state.booktitle}</h3>
             <form onSubmit={OnSubmit} method="Post">
                 <div className="form-group">
-                    <label>Book Title: </label>
+                    <label>State: </label>
                     <input className="form-control" type="text" name="booktitle"
                         value={state.booktitle}
                         onChange={handleChange}
@@ -68,7 +70,7 @@ function Book_UpDateForm(props) {
                 </div>
 
                 <div className="form-group">
-                    <label>Book Authors: </label>
+                    <label>Date: </label>
                     <input className="form-control" name="author"
                         value={state.author}
                         onChange={handleChange}
@@ -77,50 +79,24 @@ function Book_UpDateForm(props) {
 
                 <div className="form-group">
                     <label>
-                        Pick Book topic :{" "}
-                        <select className="form-control" name="Topic"
-                            value={state.Topic}
-                            onChange={handleChange}
-                        >
-                            <option value="Computer Science">Computer Science</option>
-                            <option value="Programming" >Programming</option>
-                            <option value="Data Science">Data Sceince</option>
-                            <option value="AI">AI</option>
-                            <option value="Engineering">Engineering</option>
-                        </select>
+                        Number of Deaths :{" "}
+                        <input className="form-control"
+                            type="number" name="deaths" value={state.deaths}
+                            onChange={handleChange} min="0" max="50" />
                     </label>
-
-
                 </div>
                 <div className="form-group">
-                    <label>Formate: </label>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-label"
-                            type="radio"
-                            name="formate"
-                            value="Hard Copy"
-                            checked={state.formate === "Hard Copy"}
-                            onChange={handleChange}
-                        />
-
-                        <label className="form-check-label"> Hard Copy </label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-label"
-                            type="radio"
-                            name="formate"
-                            value="Electronic Copy"
-                            checked={state.formate === "Electronic Copy"}
-                            onChange={handleChange}
-                        />
-
-                        <label className="form-check-label"> Electronic Copy</label>
-                    </div>
+                    <label>
+                        Number of Cases :{" "}
+                        <input className="form-control"
+                            type="number" name="cases" value={state.cases}
+                            onChange={handleChange} min="0" max="50" />
+                    </label>
                 </div>
 
                 <br />
                 <br />
-                <label>
+                {/* <label>
                     Publication Year (between 1980 and 2020):
                     <input
                         type="range"
@@ -132,10 +108,10 @@ function Book_UpDateForm(props) {
                     />
 
 
-                </label>
+                </label> */}
                 <center>
                     <div className="form-group">
-                        <input type="submit" value="UpDate" className="btn btn-primary" />
+                        <input type="submit" value="Update" className="btn btn-primary" />
                     </div>
                 </center>
             </form>

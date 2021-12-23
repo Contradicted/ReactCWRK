@@ -11,6 +11,8 @@ const ShowBooks = (props) => {
                         <td>{book.author}</td>
                         <td>{book.Topic}</td>
                         <td>{book.formate}</td>
+                        <td>{book.deaths}</td>
+                        <td>{book.cases}</td>
                         <td>
                             <Link to={"/edit/" + book._id}>Edit</Link>
                         </td>
@@ -35,10 +37,11 @@ export default function DisplayData(props) {
                     <tr>
                         <th>Book Title</th>
                         <th>Pub Year</th>
-                        <th>Auhtor</th>
+                        <th>Author</th>
                         <th>Subject</th>
                         <th>Formate</th>
-
+                        <th>Deaths</th>
+                        <th>Cases</th>
                     </tr>
                 </thead>
                 <tbody>

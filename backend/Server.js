@@ -71,6 +71,8 @@ app.post('/updatebook/:id', function (req, res) {
             PubYear: updatedbook.PubYear,
             author: updatedbook.author,
             Topic: updatedbook.Topic,
+            deaths: updatedbook.deaths,
+            cases: updatedbook.cases,
             formate: updatedbook.formate
         }
         ,

@@ -8,6 +8,8 @@ export default function Book_Form() {
         author: "",
         formate: "",
         Topic: "",
+        deaths: 0,
+        cases: 0,
         PubYear: 1990,
     });
 
@@ -26,6 +28,8 @@ export default function Book_Form() {
             PubYear: state.PubYear,
             author: state.author,
             Topic: state.Topic,
+            deaths: state.deaths,
+            cases: state.cases,
             formate: state.formate
         }
 
@@ -53,33 +57,20 @@ export default function Book_Form() {
                 <div className="form-group">
                     <label>
                         Number of Deaths: {" "}
-                        <select className="form-control"
-                            name="Topic" value={state.Topic}
-                            onChange={handleChange}>
-                            <option value="Computer Science">CS</option>
-                            <option value="Programming">Programming</option>
-                            <option value="Data Science">Data Science</option>
-                            <option value="AI">AI</option>
-                            <option value="Engineering">Engineering</option>
-                        </select>
+                        <input className="form-control"
+                            type="number" name="deaths" value={state.deaths}
+                            onChange={handleChange}
+                            min="0" max="50" />
                     </label>
                 </div>
                 <div className="form-group">
-                    <label>Number of Cases: </label>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-label"
-                            type="radio" name="formate" value="Hard Copy"
-                            checked={state.formate === "Hard Copy"}
-                            onChange={handleChange} />
-                        <label className="form-check-label">Hard Copy</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-label"
-                            type="radio" name="formate" value="Electronic Copy"
-                            checked={state.formate === "Electronic Copy"}
-                            onChange={handleChange} />
-                        <label className="form-check-label">Electronic Copy</label>
-                    </div>
+                    <label>
+                        Number of Cases: {" "}
+                        <input className="form-control"
+                            type="number" name="cases" value={state.cases}
+                            onChange={handleChange}
+                            min="0" max="50" />
+                    </label>
                 </div>
                 {/* <div>
                     <label>
