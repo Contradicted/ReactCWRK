@@ -1,5 +1,5 @@
 mongoose = require('mongoose');
-const MONG_URL = 'mongodb://localhost:27017/onlinelibrary';
+const MONG_URL = 'mongodb://localhost:27017/covidsystem';
 
 mongoose.connect(MONG_URL, {
     useUnifiedTopology: true,

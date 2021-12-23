@@ -81,7 +81,7 @@ export default function Book_Form() {
                         <label className="form-check-label">Electronic Copy</label>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <label>
                         Publication Year (between 1980 and 2020):
                         <input
@@ -89,7 +89,7 @@ export default function Book_Form() {
                             min="1980" max="2020" value={state.PubYear}
                             onChange={handleChange} />
                     </label>
-                </div>
+                </div> */}
 
                 <div className="form-group">
                     <center>

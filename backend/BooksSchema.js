@@ -1,5 +1,5 @@
 let mongoose = require('mongoose')
-const BookScheme = new mongoose.Schema({
+const CovidScheme = new mongoose.Schema({
     booktitle: {
         type: String,
         required: true
@@ -11,4 +11,4 @@ const BookScheme = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model('bookmodel', BookScheme, 'BookCollection') 
+module.exports = mongoose.model('covidsystem', CovidScheme, 'Data') 
