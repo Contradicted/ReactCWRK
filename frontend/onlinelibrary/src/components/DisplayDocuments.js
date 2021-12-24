@@ -14,14 +14,6 @@ export default function displayDocs() {
         PubYear: 1990,
     });
 
-    const handleChange = (e) => {
-        const value = e.target.value;
-        setState({
-            ...state,
-            [e.target.name]: value,
-        });
-    };
-
     return (
         <div style={{ marginTop: 10 }}>
             <h3>Add Data</h3>
