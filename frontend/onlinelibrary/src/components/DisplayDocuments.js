@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function displayDocs() {
 
@@ -13,6 +13,14 @@ export default function displayDocs() {
         date: "",
         PubYear: 1990,
     });
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setState({
+            ...state,
+            [e.target.name]: value,
+        });
+    };
 
     return (
         <div style={{ marginTop: 10 }}>
