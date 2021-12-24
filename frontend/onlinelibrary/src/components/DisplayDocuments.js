@@ -30,13 +30,13 @@ export default function displayDocs() {
                     <label>Enter State: </label>
                     <input className="form-control"
                         type="text" name="state"
-                        value={state.state} />
+                        value={state.state} onChange={handleChange} />
                 </div>
                 <div className="form-group">
                     <label>Enter Date: </label>
                     <input className="form-control"
                         type="date" name="date"
-                        value={state.date} />
+                        value={state.date} onChange={handleChange} />
                 </div>
             </form>
         </div>
