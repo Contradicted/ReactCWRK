@@ -6,9 +6,10 @@ function Book_UpDateForm(props) {
         booktitle: "",
         author: "",
         formate: "",
+        state: "",
         deaths: 0,
         cases: 0,
-        date: { year: 0, month: 0, day: 0 },
+        date: "",
         PubYear: 1990
     });
 
@@ -47,6 +48,7 @@ function Book_UpDateForm(props) {
             PubYear: state.PubYear,
             author: state.author,
 
+            state: state.state,
             deaths: state.deaths,
             cases: state.cases,
             date: state.date,
@@ -65,10 +67,10 @@ function Book_UpDateForm(props) {
             <form onSubmit={OnSubmit} method="Post">
                 <div className="form-group">
                     <label>State: </label>
-                    <input className="form-control" type="text" name="booktitle"
-                        value={state.booktitle}
-                        onChange={handleChange}
-                    />
+                    <input className="form-control"
+                        type="text" name="state"
+                        value={state.state}
+                        onChange={handleChange} />
                 </div>
 
                 <div className="form-group">

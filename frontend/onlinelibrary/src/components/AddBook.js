@@ -8,9 +8,10 @@ export default function Book_Form() {
         author: "",
         formate: "",
         Topic: "",
+        state: "",
         deaths: 0,
         cases: 0,
-        date: { year: 0, month: 0, day: 0 },
+        date: "",
         PubYear: 1990,
     });
 
@@ -29,6 +30,7 @@ export default function Book_Form() {
             PubYear: state.PubYear,
             author: state.author,
             Topic: state.Topic,
+            state: state.state,
             deaths: state.deaths,
             cases: state.cases,
             date: state.date,
@@ -46,8 +48,8 @@ export default function Book_Form() {
                 <div className="form-group">
                     <label>State: </label>
                     <input className="form-control"
-                        type="text" name="booktitle"
-                        value={state.booktitle}
+                        type="text" name="state"
+                        value={state.state}
                         onChange={handleChange} />
                 </div>
                 <div className="form-group">

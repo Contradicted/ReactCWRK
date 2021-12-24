@@ -6,11 +6,7 @@ const ShowBooks = (props) => {
             Data.map((book, index) => {
                 return (
                     <tr>
-                        <td>{book.booktitle}</td>
-                        <td>{book.PubYear}</td>
-                        <td>{book.author}</td>
-                        <td>{book.Topic}</td>
-                        <td>{book.formate}</td>
+                        <td>{book.state}</td>
                         <td>{book.deaths}</td>
                         <td>{book.cases}</td>
                         <td>{book.date}</td>
@@ -36,11 +32,7 @@ export default function DisplayData(props) {
             <table className="table table-striped" class="table table-hover" style={{ marginTop: 20 }} >
                 <thead>
                     <tr>
-                        <th>Book Title</th>
-                        <th>Pub Year</th>
-                        <th>Author</th>
-                        <th>Subject</th>
-                        <th>Formate</th>
+                        <th>State</th>
                         <th>Deaths</th>
                         <th>Cases</th>
                         <th>Date</th>

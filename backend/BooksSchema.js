@@ -7,11 +7,10 @@ const CovidScheme = new mongoose.Schema({
     PubYear: Number,
     author: String,
     Topic: String,
+    state: String,
     deaths: Number,
     cases: Number,
-    date: {
-        type: Object
-    },
+    date: Date,
     formate: String
 
 })
