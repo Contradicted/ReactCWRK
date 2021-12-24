@@ -1,4 +1,3 @@
-import { useHistory } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -39,6 +38,7 @@ function Book_UpDateForm(props) {
             ...state,
             [e.target.name]: value,
         });
+        console.log(now);
     };
 
     const OnSubmit = (e) => {
@@ -78,7 +78,7 @@ function Book_UpDateForm(props) {
                 <div className="form-group">
                     <label for="date">Date: </label>
                     <input className="form-control"
-                        type="date" name="date" value={state.date}
+                        type="date" name="date" format="yyyy-mm-dd" value={state.date}
                         onChange={handleChange} />
                 </div>
 

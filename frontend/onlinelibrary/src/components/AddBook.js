@@ -55,7 +55,7 @@ export default function Book_Form() {
                 <div className="form-group">
                     <label for="date">Date: </label>
                     <input className="form-control"
-                        type="date" name="date" value={state.date}
+                        type="date" name="date" format="yyyy-mm-dd" value={state.date}
                         onChange={handleChange} />
                 </div>
                 <div className="form-group">
