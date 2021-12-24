@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -39,6 +40,10 @@ function Book_UpDateForm(props) {
             [e.target.name]: value,
         });
     };
+
+    const routeChange = () => {
+        console.log("Whats going on?");
+    }
     const OnSubmit = (e) => {
 
         e.preventDefault();
@@ -70,7 +75,7 @@ function Book_UpDateForm(props) {
                     <input className="form-control"
                         type="text" name="state"
                         value={state.state}
-                        onChange={handleChange} />
+                        onChange={handleChange} disabled />
                 </div>
 
                 <div className="form-group">
@@ -114,7 +119,7 @@ function Book_UpDateForm(props) {
                 </label> */}
                 <center>
                     <div className="form-group">
-                        <input type="submit" value="Update" className="btn btn-primary" />
+                        <input type="submit" value="Update" onClick={routeChange} className="btn btn-primary" />
                     </div>
                 </center>
             </form>
