@@ -38,7 +38,6 @@ function Book_UpDateForm(props) {
             ...state,
             [e.target.name]: value,
         });
-        console.log(now);
     };
 
     const OnSubmit = (e) => {
