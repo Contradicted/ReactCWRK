@@ -1,26 +1,4 @@
-import React, { useState } from "react";
-
 export default function displayDocs() {
-
-    const [state, setState] = useState({
-        booktitle: "",
-        author: "",
-        formate: "",
-        Topic: "",
-        state: "",
-        deaths: 0,
-        cases: 0,
-        date: "",
-        PubYear: 1990,
-    });
-
-    const handleChange = (e) => {
-        const value = e.target.value;
-        setState({
-            ...state,
-            [e.target.name]: value,
-        });
-    };
 
     return (
         <div style={{ marginTop: 10 }}>
@@ -29,14 +7,12 @@ export default function displayDocs() {
                 <div className="form-group">
                     <label>Enter State: </label>
                     <input className="form-control"
-                        type="text" name="state"
-                        value={state.state} onChange={handleChange} />
+                        type="text" name="state" />
                 </div>
                 <div className="form-group">
                     <label>Enter Date: </label>
                     <input className="form-control"
-                        type="date" name="date"
-                        value={state.date} onChange={handleChange} />
+                        type="date" name="date" />
                 </div>
             </form>
         </div>
