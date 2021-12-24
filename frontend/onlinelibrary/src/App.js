@@ -6,6 +6,7 @@ import Book_UpDateForm from "./components/BookUpdate";
 import FncDisplayBooks from "./components/DsplyBk_fncCompt";
 import DeleteBook from "./components/Delete_Book";
 import displayDocs from "./components/DisplayDocuments";
+import displayStates from "./components/DisplayStates";
 
 export default class App extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class App extends Component {
             <Link to="/" className="navbar-brand"><h4>Add Data</h4></Link>
             <Link to="/DisplayBooksF1" className="navbar-brand"><h4>Display All Data</h4></Link>
             <Link to="/DisplayDocs" className="navbar-brand"><h4>Display Documents</h4></Link>
+            <Link to="/DisplayStates" className="navbar-brand"><h4>Display States</h4></Link>
           </nav>
           <br />
           <Route path="/" exact component={Book_Form} />
@@ -25,6 +27,7 @@ export default class App extends Component {
           <Route path="/Delete/:id" component={DeleteBook} />
           <Route path="/DisplayBooksF1" component={FncDisplayBooks} />
           <Route path='/DisplayDocs' component={displayDocs} />
+          <Route path='/DisplayStates' component={displayStates} />
         </div>
       </Router>
     );
