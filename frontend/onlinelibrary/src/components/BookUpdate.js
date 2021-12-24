@@ -41,9 +41,6 @@ function Book_UpDateForm(props) {
         });
     };
 
-    const routeChange = () => {
-        console.log("Whats going on?");
-    }
     const OnSubmit = (e) => {
 
         e.preventDefault();
