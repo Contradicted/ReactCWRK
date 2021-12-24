@@ -17,6 +17,7 @@ export default class App extends Component {
           <nav className="navbar navbar-expand-xs navbar-light bg-warning px-2">
             <Link to="/" className="navbar-brand"><h4>Add Data</h4></Link>
             <Link to="/DisplayBooksF1" className="navbar-brand"><h4>Display All Data</h4></Link>
+            <Link to="/DisplayDocs" className="navbar-brand"><h4>Display Documents</h4></Link>
           </nav>
           <br />
           <Route path="/" exact component={Book_Form} />
