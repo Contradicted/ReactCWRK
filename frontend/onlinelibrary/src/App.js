@@ -5,7 +5,7 @@ import Book_Form from "./components/AddBook";
 import Book_UpDateForm from "./components/BookUpdate";
 import FncDisplayBooks from "./components/DsplyBk_fncCompt";
 import DeleteBook from "./components/Delete_Book";
-// import displayDocs from "./components/DisplayDocuments";
+import displayDocs from "./components/DisplayDocuments";
 
 export default class App extends Component {
   render() {
@@ -24,7 +24,7 @@ export default class App extends Component {
           <Route path="/edit/:id" component={Book_UpDateForm} />
           <Route path="/Delete/:id" component={DeleteBook} />
           <Route path="/DisplayBooksF1" component={FncDisplayBooks} />
-          {/* <Route path='/DisplayDocs' component={displayDocs} /> */}
+          <Route path='/DisplayDocs' component={displayDocs} />
         </div>
       </Router>
     );
