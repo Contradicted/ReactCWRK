@@ -1,5 +1,5 @@
 let express = require("express")
-let Books = require('./booksSchema')
+let CovidData = require('./booksSchema')
 let mongodbConnected = require('./MongodbConnect')
 const cors = require('cors');
 
@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
 app.use(cors());
-console.log("BOOKS", Books)
+console.log("BOOKS", CovidData)
 
 app.get('/', function (req, res) {
     console.log("this is default")
@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 app.get('/about', function (req, res) {
 
     res.send("mongodb express  React and mongoose app,React runs in another application")
-    Books.countDocuments().exec()
+    CovidData.countDocuments().exec()
         .then(count => {
 
             console.log("Total documents Count before addition :", count)
@@ -31,7 +31,7 @@ app.get('/about', function (req, res) {
 })
 
 app.get('/allbooks', function (req, res) {
-    Books.find(function (err, allbook) {
+    CovidData.find(function (err, allbook) {
         if (err) {
             console.log(err);
         } else {
@@ -43,14 +43,14 @@ app.get('/allbooks', function (req, res) {
 
 app.get('/getbook/:id', function (req, res) {
     let id = req.params.id;
-    Books.findById(id, function (err, book) {
+    CovidData.findById(id, function (err, book) {
         console.log("found book" + book)
         res.json(book);
     });
 });
 app.post('/addbooks', function (req, res) {
     console.log("Ref", req.body)
-    let newbook = new Books(req.body);
+    let newbook = new CovidData(req.body);
     console.log("newbook->", newbook)
     newbook.save()
         .then(todo => {
@@ -62,10 +62,10 @@ app.post('/addbooks', function (req, res) {
 })
 app.post('/updatebook/:id', function (req, res) {
     let id = req.params.id;
-    let updatedbook = new Books(req.body);
+    let updatedbook = new CovidData(req.body);
     console.log("update id", id, "newbook->", updatedbook)
 
-    Books.findByIdAndUpdate(id,
+    CovidData.findByIdAndUpdate(id,
         {
             booktitle: updatedbook.booktitle,
             PubYear: updatedbook.PubYear,
@@ -96,7 +96,7 @@ app.post('/deleteBook/:id', function (req, res) {
     let id = req.params.id;
 
     console.log("deleting")
-    Books.findByIdAndDelete(id, function (err, docs) {
+    CovidData.findByIdAndDelete(id, function (err, docs) {
         if (err) {
             console.log(err)
         }
