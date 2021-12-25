@@ -1,5 +1,5 @@
 let express = require("express")
-let CovidData = require('./booksSchema')
+let CovidData = require('./DataSchema')
 let mongodbConnected = require('./MongodbConnect')
 const cors = require('cors');
 
@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
 app.use(cors());
-console.log("BOOKS", CovidData)
+console.log("DATA", CovidData)
 
 app.get('/', function (req, res) {
     console.log("this is default")
