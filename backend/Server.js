@@ -30,13 +30,13 @@ app.get('/about', function (req, res) {
 
 })
 
-app.get('/allbooks', function (req, res) {
-    CovidData.find(function (err, allbook) {
+app.get('/alldata', function (req, res) {
+    CovidData.find(function (err, alldata) {
         if (err) {
             console.log(err);
         } else {
 
-            res.json(allbook);
+            res.json(alldata);
         }
     });
 });

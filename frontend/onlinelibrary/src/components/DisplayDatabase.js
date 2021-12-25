@@ -6,7 +6,7 @@ import DisplayData from './DisplayData';
 //rendered using a separate functional component Display Data In Display data, we  pass the state variable Books  as data recieved  axious lib
 export default function FncDisplayBooks() {
     const [Books, setBooks] = useState([]);
-    const url = "http://localhost:5000/allbooks/"
+    const url = "http://localhost:5000/alldata/"
 
     useEffect(() => {
         axios.get(url)
