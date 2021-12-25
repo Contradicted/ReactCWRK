@@ -3,14 +3,10 @@ import axios from "axios";
 
 function Book_UpDateForm(props) {
     const [state, setState] = useState({
-        booktitle: "",
-        author: "",
-        formate: "",
         state: "",
         deaths: 0,
         cases: 0,
         date: "",
-        PubYear: 1990
     });
 
     let url = "http://localhost:5000/"
@@ -43,28 +39,22 @@ function Book_UpDateForm(props) {
     const OnSubmit = (e) => {
 
         e.preventDefault();
-        const bookdata = {
-            booktitle: state.booktitle,
-
-            PubYear: state.PubYear,
-            author: state.author,
-
+        const coviddata = {
             state: state.state,
             deaths: state.deaths,
             cases: state.cases,
             date: state.date,
-            formate: state.formate
 
         }
 
-        axios.post(url + "updatebook/" + props.match.params.id, bookdata)
+        axios.post(url + "updatebook/" + props.match.params.id, coviddata)
             .then(res => console.log(res.data));
 
 
     }
     return (
         <div style={{ marginTop: 10 }}>
-            <h3> Update Data Id: {state.booktitle}</h3>
+            <h3> Update Data:</h3>
             <form onSubmit={OnSubmit} method="Post">
                 <div className="form-group">
                     <label>State: </label>
@@ -100,19 +90,6 @@ function Book_UpDateForm(props) {
 
                 <br />
                 <br />
-                {/* <label>
-                    Publication Year (between 1980 and 2020):
-                    <input
-                        type="range"
-                        name="PubYear"
-                        min="1980"
-                        max="2020"
-                        value={state.PubYear}
-                        onChange={handleChange}
-                    />
-
-
-                </label> */}
                 <center>
                     <div className="form-group">
                         <input type="submit" value="Update" className="btn btn-primary" />

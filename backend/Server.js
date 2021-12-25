@@ -1,5 +1,5 @@
 let express = require("express")
-let CovidData = require('./DataSchema')
+let CovidData = require('./CovidSchema')
 let mongodbConnected = require('./MongodbConnect')
 const cors = require('cors');
 
@@ -48,7 +48,7 @@ app.get('/getbook/:id', function (req, res) {
         res.json(book);
     });
 });
-app.post('/addbooks', function (req, res) {
+app.post('/adddata', function (req, res) {
     console.log("Ref", req.body)
     let newbook = new CovidData(req.body);
     console.log("newbook->", newbook)
@@ -67,15 +67,10 @@ app.post('/updatebook/:id', function (req, res) {
 
     CovidData.findByIdAndUpdate(id,
         {
-            booktitle: updatedbook.booktitle,
-            PubYear: updatedbook.PubYear,
-            author: updatedbook.author,
-            Topic: updatedbook.Topic,
             state: updatedbook.state,
             deaths: updatedbook.deaths,
             cases: updatedbook.cases,
             date: updatedbook.date,
-            formate: updatedbook.formate
         }
         ,
         function (err, docs) {

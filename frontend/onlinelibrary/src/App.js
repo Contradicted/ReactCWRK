@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Book_Form from "./components/AddData";
 import Book_UpDateForm from "./components/UpdateData";
 import FncDisplayBooks from "./components/DisplayDatabase";
 import DeleteBook from "./components/DeleteData";
 import displayDocs from "./components/DisplayDocuments";
 import displayStates from "./components/DisplayStates";
+import InsertData from "./components/AddData";
 
 export default class App extends Component {
   render() {
@@ -22,7 +22,7 @@ export default class App extends Component {
             <Link to="/DisplayStates" className="navbar-brand"><h4>Display States</h4></Link>
           </nav>
           <br />
-          <Route path="/" exact component={Book_Form} />
+          <Route path="/" exact component={InsertData} />
           <Route path="/edit/:id" component={Book_UpDateForm} />
           <Route path="/Delete/:id" component={DeleteBook} />
           <Route path="/DisplayBooksF1" component={FncDisplayBooks} />
