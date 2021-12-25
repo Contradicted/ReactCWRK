@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Book_Form from "./components/AddBook";
-import Book_UpDateForm from "./components/BookUpdate";
-import FncDisplayBooks from "./components/DsplyBk_fncCompt";
-import DeleteBook from "./components/Delete_Book";
+import Book_Form from "./components/AddData";
+import Book_UpDateForm from "./components/UpdateData";
+import FncDisplayBooks from "./components/DisplayDatabase";
+import DeleteBook from "./components/DeleteData";
 import displayDocs from "./components/DisplayDocuments";
 import displayStates from "./components/DisplayStates";
 
