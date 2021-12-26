@@ -85,25 +85,21 @@ app.post('/updatedata/:id', function (req, res) {
 
 });
 
-app.post('/deleteBook/:id', function (req, res) {
+app.post('/deleteData/:id', function (req, res) {
     let id = req.params.id;
 
-    console.log("deleting")
+    console.log("Deleting...")
     CovidData.findByIdAndDelete(id, function (err, docs) {
         if (err) {
             console.log(err)
         }
         else {
-            res.status(200).send('Book Deleted');
+            res.status(200).send('Data has been deleted');
         }
     }
-
-
     )
-
 });
 
-
 app.listen(5000, function () {
-    console.log("Server is running on the port 5000")
+    console.log("Server is running on PORT:5000")
 })

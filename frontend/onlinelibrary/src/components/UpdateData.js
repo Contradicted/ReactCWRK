@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function Book_UpDateForm(props) {
+function DataUpdate(props) {
     const [state, setState] = useState({
         state: "",
         deaths: 0,
@@ -100,4 +100,4 @@ function Book_UpDateForm(props) {
     );
 }
 
-export default Book_UpDateForm;
+export default DataUpdate;

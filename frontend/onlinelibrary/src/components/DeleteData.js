@@ -8,11 +8,10 @@ export default function DeleteBook(props) {
 
     useEffect(() => {
         console.log("useeff delete" + props.match.params.id)
-        axios.post("http://localhost:5000/deleteBook/" + props.match.params.id)
+        axios.post("http://localhost:5000/deleteData/" + props.match.params.id)
             .then(res => {
                 axios.get("http://localhost:5000/alldata")
                     .then(res => {
-
                         setState(res.data)
                         console.log("data set in the state and state length" + state.length)
                     })
