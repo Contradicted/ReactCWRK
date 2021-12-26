@@ -10,7 +10,7 @@ export default function DeleteBook(props) {
         console.log("useeff delete" + props.match.params.id)
         axios.post("http://localhost:5000/deleteBook/" + props.match.params.id)
             .then(res => {
-                axios.get("http://localhost:5000/allbooks")
+                axios.get("http://localhost:5000/alldata")
                     .then(res => {
 
                         setState(res.data)

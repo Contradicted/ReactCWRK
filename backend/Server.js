@@ -41,36 +41,36 @@ app.get('/alldata', function (req, res) {
     });
 });
 
-app.get('/getbook/:id', function (req, res) {
+app.get('/getdata/:id', function (req, res) {
     let id = req.params.id;
-    CovidData.findById(id, function (err, book) {
-        console.log("found book" + book)
-        res.json(book);
+    CovidData.findById(id, function (err, data) {
+        console.log("Data Found" + data)
+        res.json(data);
     });
 });
 app.post('/adddata', function (req, res) {
     console.log("Ref", req.body)
-    let newbook = new CovidData(req.body);
-    console.log("newbook->", newbook)
-    newbook.save()
+    let newdata = new CovidData(req.body);
+    console.log("New Data", newdata)
+    newdata.save()
         .then(todo => {
-            res.status(200).json({ 'books': 'book added successfully' });
+            res.status(200).json({ 'Covid System': 'Data added successfully' });
         })
         .catch(err => {
-            res.status(400).send('adding new book failed');
+            res.status(400).send('Failed to add Data');
         });
 })
-app.post('/updatebook/:id', function (req, res) {
+app.post('/updatedata/:id', function (req, res) {
     let id = req.params.id;
-    let updatedbook = new CovidData(req.body);
-    console.log("update id", id, "newbook->", updatedbook)
+    let updateddata = new CovidData(req.body);
+    console.log("Update ID:", id, "\n", "New Data", updateddata)
 
     CovidData.findByIdAndUpdate(id,
         {
-            state: updatedbook.state,
-            deaths: updatedbook.deaths,
-            cases: updatedbook.cases,
-            date: updatedbook.date,
+            state: updateddata.state,
+            deaths: updateddata.deaths,
+            cases: updateddata.cases,
+            date: updateddata.date,
         }
         ,
         function (err, docs) {
@@ -78,11 +78,9 @@ app.post('/updatebook/:id', function (req, res) {
                 console.log(err)
             }
             else {
-                res.status(200).json({ 'books': 'book updated successfully' });
+                res.status(200).json({ 'Covid System': 'Data added successfully' });
             }
         }
-
-
     )
 
 });

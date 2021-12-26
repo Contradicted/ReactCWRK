@@ -14,7 +14,7 @@ function Book_UpDateForm(props) {
 
     // this is on compunt Did Mount Event analogy
     useEffect(() => {
-        axios.get('http://localhost:5000/getbook/' + props.match.params.id)
+        axios.get('http://localhost:5000/getdata/' + props.match.params.id)
             .then(res => {
                 // set the state variable from the data received from the axios api
                 console.log("update fun" + res.data)
@@ -44,10 +44,9 @@ function Book_UpDateForm(props) {
             deaths: state.deaths,
             cases: state.cases,
             date: state.date,
-
         }
 
-        axios.post(url + "updatebook/" + props.match.params.id, coviddata)
+        axios.post(url + "updatedata/" + props.match.params.id, coviddata)
             .then(res => console.log(res.data));
 
 
