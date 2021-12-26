@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 //import { Link } from 'react-router-dom';
 import DisplayData from './DisplayData';
-export default function DeleteBook(props) {
+export default function DeleteCovidData(props) {
     const [state, setState] = useState([]);
 
 
@@ -27,7 +27,7 @@ export default function DeleteBook(props) {
 
     return (
         <div>
-            <DisplayData Books={state} />
+            <DisplayData CovidData={state} />
         </div>
     )
 }

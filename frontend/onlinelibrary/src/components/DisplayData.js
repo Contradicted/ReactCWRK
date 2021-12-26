@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom';
-const ShowBooks = (props) => {
-    const Data = props.TBooks
+const ShowCovidData = (props) => {
+    const Data = props.CData
     if (Data.length > 0) {
         return (
-            Data.map((book, index) => {
+            Data.map((data, index) => {
                 return (
                     <tr>
-                        <td>{book.state}</td>
-                        <td>{book.deaths}</td>
-                        <td>{book.cases}</td>
-                        <td>{book.date}</td>
+                        <td>{data.state}</td>
+                        <td>{data.deaths}</td>
+                        <td>{data.cases}</td>
+                        <td>{data.date}</td>
                         <td>
-                            <Link to={"/edit/" + book._id}>Edit</Link>
+                            <Link to={"/edit/" + data._id}>Edit</Link>
                         </td>
                         <td>
-                            <Link to={"/Delete/" + book._id}>Delete</Link>
+                            <Link to={"/Delete/" + data._id}>Delete</Link>
                         </td>
                     </tr>
                 )
@@ -25,7 +25,7 @@ const ShowBooks = (props) => {
 }
 export default function DisplayData(props) {
 
-    const Books = props.Books
+    const CovidData = props.CovidData
     return (
         <div>
             <h3>Book List</h3>
@@ -39,7 +39,7 @@ export default function DisplayData(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    < ShowBooks TBooks={Books} />
+                    < ShowCovidData CData={CovidData} />
                 </tbody>
             </table>
         </div>
