@@ -35,7 +35,6 @@ app.get('/alldata', function (req, res) {
         if (err) {
             console.log(err);
         } else {
-
             res.json(alldata);
         }
     });
@@ -99,6 +98,12 @@ app.post('/deleteData/:id', function (req, res) {
     }
     )
 });
+
+CovidData.find({ state: 'Georgia' }, { state: 'Georgia', cases: 1, deaths: 1, _id: 0 })
+    .exec()
+    .then(CovidData => {
+        console.log(CovidData)
+    })
 
 app.listen(5000, function () {
     console.log("Server is running on PORT:5000")
