@@ -47,6 +47,22 @@ app.get('/getdata/:id', function (req, res) {
         res.json(data);
     });
 });
+
+app.get('/getinfo', function (req, res) {
+    CovidData.find(function (err, somedata) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(somedata);
+        }
+    })
+    // CovidData.find({ state: 'Georgia' }, { state: 'Georgia', cases: 1, deaths: 1, _id: 0 })
+    //     .exec()
+    //     .then(CovidData => {
+    //         console.log(CovidData)
+    //     })
+})
+
 app.post('/adddata', function (req, res) {
     console.log("Ref", req.body)
     let newdata = new CovidData(req.body);
@@ -98,12 +114,6 @@ app.post('/deleteData/:id', function (req, res) {
     }
     )
 });
-
-CovidData.find({ state: 'Georgia' }, { state: 'Georgia', cases: 1, deaths: 1, _id: 0 })
-    .exec()
-    .then(CovidData => {
-        console.log(CovidData)
-    })
 
 app.listen(5000, function () {
     console.log("Server is running on PORT:5000")
