@@ -49,18 +49,20 @@ app.get('/getdata/:id', function (req, res) {
 });
 
 app.get('/getinfo', function (req, res) {
-    CovidData.find(function (err, somedata) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.json(somedata);
-        }
-    })
+
     // CovidData.find({ state: 'Georgia' }, { state: 'Georgia', cases: 1, deaths: 1, _id: 0 })
     //     .exec()
     //     .then(CovidData => {
     //         console.log(CovidData)
     //     })
+
+    // CovidData.find(function (err, somedata) {
+    //     if (err) {
+    //         console.log(err);
+    //     } else {
+    //         res.json(somedata);
+    //     }
+    // })
 })
 
 app.post('/adddata', function (req, res) {

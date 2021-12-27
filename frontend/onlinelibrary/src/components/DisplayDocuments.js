@@ -1,8 +1,23 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import DisplayData from "./DisplayData";
 
+const ShowDocuments = (props) => {
 
+    const Data = props.CData
+    if (Data.length > 0) {
+        return (
+            Data.map((data, index) => {
+                return (
+                    <tr>
+                        <td>{data.cases}</td>
+                        <td>{data.deaths}</td>
+                    </tr>
+                )
+            })
+        )
+    } else
+        return (<h1>No Data Returned </h1>)
+}
 
 export default function DisplayDocs() {
 
@@ -35,26 +50,32 @@ export default function DisplayDocs() {
                     className="form-control" type="text"
                     onChange={getData} name="state" />
                 <br></br>
-                <button className="btn btn-primary" onClick={() => setPrint(true)}>Print Value</button>
+                <button className="btn btn-primary" onClick={() => setPrint(true)}>Show Documents</button>
             </div>
 
             <div>
                 {
                     print ?
                         <div>
-                            <p></p>
-                            <h3>Showing info on:  <b>{data}</b></h3>
+                            <div>
+                                <p></p>
+                                <h3>Showing info on:  <b>{data}</b></h3>
+                            </div>
+
+                            <table className="table table-striped" class="table table-hover" style={{ marginTop: 20 }} >
+                                <thead>
+                                    <tr>
+                                        <th>Cases</th>
+                                        <th>Deaths</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ShowDocuments CData={CovidData} />
+                                </tbody>
+                            </table>
                         </div>
                         : null
                 }
-                <table className="table table-striped" class="table table-hover" style={{ marginTop: 20 }} >
-                    <thead>
-                        <tr>
-                            <th>Cases</th>
-                            <th>Deaths</th>
-                        </tr>
-                    </thead>
-                </table>
             </div>
         </>
     )
